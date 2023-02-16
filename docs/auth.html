@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Авторизация</title>
+  </head>
+  <body>
+    <h1 id="your-id-name">Авторизируйтесь</h1>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Логин" />
+    <br /><br />
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Пароль" />
+    <br /><br />
+    <input type="button" value="Войти" onclick="login()" />
+
+    <button id="clearButton">Очистить</button>
+
+    <div class="bodyClass">
+      <div class="dem"> Наведи на меня </div>
+<style>
+   .dem {
+      width: 70px;
+      position: relative;
+        left:10%;
+ 	border:3px solid #2BA2DB;
+      animation:  25s infinite ease-in-out; /* Указываем название анимации, её время и количество повторов*/
+      animation-duration: 25s;     
+   } 
+   .dem:hover {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #fff; /* Цвет ссылки при наведении на нее курсора мыши */  
+    background: #e24486; /* Цвет фона */
+    animation-name: sliden;     
+}
+@keyframes sliden {
+10% { background: linear-gradient(17deg, rgba(74,246,195,1) 0%, rgba(83,200,245,0.9556197478991597) 61%); left:10%;}
+20% { background: linear-gradient(346deg, rgba(74,246,195,1) 0%, rgba(83,200,245,0.9556197478991597) 61%); left:30%;}
+100% {left:70%;}
+}
+</style>
+  </body>
+
+  <script>
+    document.getElementById("clearButton").onclick = function (e) {
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+    };
+
+    function login() {
+      elem = document.getElementById("username");
+      elem1 = document.getElementById("password");
+      elem.style.background = "red";
+      username = elem.value;
+      password = elem1.value;
+
+      if ((username == "admin", password == "12345")) {
+        alert("Нажми ок чтобы войти");
+        window.open("admin.html");
+      } else {
+        alert("ТЫ НЕ АДМИН!");
+      }
+
+      if ((username == "user", password == "00000")) {
+        alert("Нажми ок чтобы войти");
+        window.open("index.html");
+      } else {
+        alert("НЕВЕРНЫЕ ДАННЫЕ");
+      }
+    }
+  </script>
+</html>
